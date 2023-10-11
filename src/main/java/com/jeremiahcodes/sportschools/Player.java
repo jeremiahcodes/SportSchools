@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.List;
 
-@Document(collation = "players")
+@Document(collection = "players")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,4 +30,13 @@ public class Player {
     private List<String> highlightReel;
     @DocumentReference
     private List<Award> awardIds;
+
+    public Player(String externalPlayerId, String name, String birthDate, String highlightLink, String poster, Sport sports) {
+        this.externalPlayerId = externalPlayerId;
+        this.name = name;
+        this.birthDate = birthDate;
+        this.highlightLink = highlightLink;
+        this.poster = poster;
+        this.sports = sports;
+    }
 }
