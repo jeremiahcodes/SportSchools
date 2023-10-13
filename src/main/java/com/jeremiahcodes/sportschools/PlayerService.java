@@ -17,4 +17,9 @@ public class PlayerService {
     public Optional<Player> findMovieByExternalPlayerId(String imdbId) {
         return repository.findMovieByExternalPlayerId(imdbId);
     }
+
+    public Player savePlayer(Player player){
+        return  repository.save(player);
+    }
+
 }
